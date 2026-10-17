@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 230px;
+      padding: 16px;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #181818;
+      color: #fff;
+      box-sizing: border-box;
+      user-select: none;
+    }
+    h2 {
+      font-size: 16px;
+      margin: 0 0 14px 0;
+      text-align: center;
+      color: #ffcc00;
+    }
+    .toggle-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .toggle-row label {
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #444;
+      border-radius: 24px;
+      transition: 0.25s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: 0.25s;
+    }
+    input:checked + .slider {
+      background-color: #00e676;
+    }
+    input:checked + .slider.original-slider {
+      background-color: #ff9100;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+</head>
+<body>
+  <h2>Windy31ify</h2>
+  <div class="toggle-group">
+    <div class="toggle-row">
+      <label for="enabledToggle">Включено</label>
+      <label class="switch">
+        <input type="checkbox" id="enabledToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="toggle-row">
+      <label for="originalToggle">ОРИГИНАЛ</label>
+      <label class="switch">
+        <input type="checkbox" id="originalToggle">
+        <span class="slider original-slider"></span>
+      </label>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

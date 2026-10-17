@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Windy31ify",
+  "version": "1.3",
+  "description": "Windy31ify на превью YouTube",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "96": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["*://*.youtube.com/*"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["*://*/*"],
+      "resources": ["images/*.png"]
+    }
+  ]
+}
